@@ -1,0 +1,10 @@
+.snow-box{
+            position: absolute;
+            width:100%;
+        }
+        .snow{
+            width:10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: #fff;
+        }

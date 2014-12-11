@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>双12到啦！</title>
+        <script type="text/javascript" src="WeixinApi.js?v=1"></script>
+        <link rel="stylesheet" href="css/jquery.fullPage.css">
+        <style>
+            .section{text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+            .section img:not(.bg){display: none;}
+            .absolute{position: absolute;}
+
+            .word1{width: 50%;height:auto;bottom:25%;left: 25%;}
+            .word2{width: 50%;height:auto;top:5%;left: 25%;}
+            .next{width:12%;left:44%;bottom: 1%;}
+
+            .word3{width: 40%;height:auto;top: 0;left: 30%;}
+            .word4{width: 50%;height:auto;bottom:15%;left: 0;}
+            .word5{width: auto;height:25%;top:50%;right: 0;}
+
+            .word6{width: 40%;height:auto;top: 5%;right: 0;}
+            .word7{width: 40%;height:auto;top: 48%;right: 0;}
+            .word8{width: 60%;height:auto;bottom: 2%;left: 5%;}
+
+            .word9{width: 60%;height:auto;top: 15%;left: 5%;}
+            .word10{width: 60%;height:auto;bottom: 2%;left: 20%;}
+
+            .word11{width: 50%;height:auto;top: 10%;left: 4%;}
+            .word12{width: 40%;height:auto;bottom: 2%;left: 8%;}
+            .word13{width: 38%;height:auto;bottom: 2%;left: 52%;}
+
+            .word14{width: 40%;height:auto;bottom: 2%;left: 2%;}
+            .word15{width: 38%;height:auto;top: 2%;right: 5%;}
+
+            .word16{width: 50%;height:auto;top: 10%;right: 15%;}
+            .word17{width: 12%;height:auto;bottom: 15%;left: 8%;}
+            .word18{width: 12%;height:auto;bottom: 2%;left: 30%;}
+
+            .frist-w{width: 60%;height:auto;top: 25%;right: 8%;}
+            .second-w{width: 60%;height:auto;bottom: 10%;left: 20%;}
+
+            .bg-div{width: 700%;height: 100%;top:0;left: -300%;}
+            .bg-img{height: 100%;width: auto;top:0;}
+        </style>
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/jquery-ui-1.10.3.min.js"></script>
+        <script src="js/jquery.fullPage.min.js"></script>
+        <script src="js/jquery.rotate.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var w1,w2,Inext,w4,w5,w7,w8,w10,w12,w13,w14,w17,w18,wf,ws;
+                $('.dt').fadeIn(2000);
+                w2 = setTimeout("w2()",1500);
+                w1 = setTimeout("w1()",2500);
+                $(".next").fadeIn(1000);
+                Inext = setInterval("showNext()",1500);
+                $.fn.fullpage({
+                    slidesColor: ['white', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+                    anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8'],
+                    animateAnchor:false,
+                    afterLoad: function(anchorLink, index){
+                        if(index == 1){
+                            $('.dt').fadeIn(2000);
+                            Inext = setInterval("showNext()",1500);
+                            w2 = setTimeout("w2()",1500);
+                            w1 = setTimeout("w1()",2500);
+                        }
+                        if(index == 2){
+                            $('.word3').fadeIn(1000);
+                            w4 = setTimeout("w4()",1000);
+                            w5 = setTimeout("w5()",2000);
+                        }
+                        if(index == 3){
+                            $('.word6').fadeIn(1000);
+                            w7 = setTimeout("w7()",1000);
+                            w8 = setTimeout("w8()",2000);
+                        }
+                        if(index == 4){
+                            $('.word9').fadeIn(1000);
+                            w10 = setTimeout("w10()",1000);
+                        }
+                        if(index == 5){
+                            $('.word11').fadeIn(1000);
+                            w12 = setTimeout("w12()",1000);
+                            w13 = setTimeout("w13()",2000);
+                        }
+                        if(index == 6){
+                            $('.word15').fadeIn(1000);
+                            w14 = setTimeout("w14()",1000);
+                        }
+                        if(index == 7){
+                            $('.word16').fadeIn(1000);
+                            w17 = setTimeout("w17()",1000);
+                            w18 = setTimeout("w18()",2000);
+                        }
+                        if(index == 8){
+                            wf = setTimeout("wFrist()",1000);
+                            ws = setTimeout("wSecond()",3000);
+                        }
+                    },
+                    onLeave: function(index, direction){
+                        if(index == 1){
+                            clearInterval(Inext);
+                            clearTimeout(w2);
+                            clearTimeout(w1);
+                            $('.dt').fadeOut();
+                            $('.word1').fadeOut();
+                            $('.word2').fadeOut();
+                        }
+                        if(index == '2'){
+                            clearTimeout(w4);
+                            clearTimeout(w5);
+                            $('.word3').fadeOut();
+                            $('.word4').fadeOut();
+                            $('.word5').fadeOut();
+                        }
+                        if(index == '3'){
+                            clearTimeout(w7);
+                            clearTimeout(w8);
+                            $('.word6').fadeOut();
+                            $('.word7').fadeOut();
+                            $('.word8').fadeOut();
+                        }
+                        if(index == '4'){
+                            clearTimeout(w10);
+                            $('.word9').fadeOut();
+                            $('.word10').fadeOut();
+                        }
+                        if(index == '5'){
+                            clearTimeout(w12);
+                            clearTimeout(w13);
+                            $('.word11').fadeOut();
+                            $('.word12').fadeOut();
+                            $('.word13').fadeOut();
+                        }
+                        if(index == '6'){
+                            clearTimeout(w14);
+                            $('.word14').fadeOut();
+                            $('.word15').fadeOut();
+                        }
+                        if(index == '7'){
+                            clearTimeout(w17);
+                            clearTimeout(w18);
+                            $('.word16').fadeOut();
+                            $('.word17').fadeOut();
+                            $('.word18').fadeOut();
+                        }
+                        if(index == '8'){
+                            clearTimeout(wf);
+                            clearTimeout(ws);
+                            $('.frist-w').fadeOut();
+                            $('.second-w').fadeOut();
+                        }
+                    }
+                });
+            $(".section>div").removeClass("tableCell");
+            });
+            function w1(){$('.word1').fadeIn(1000);}
+            function w2(){$('.word2').fadeIn(1000);}
+            function w4(){$('.word4').fadeIn(1000);}
+            function w5(){$('.word5').fadeIn(1000);}
+            function w7(){$('.word7').fadeIn(1000);}
+            function w8(){$('.word8').fadeIn(1000);}
+            function w10(){$('.word10').fadeIn(1000);}
+            function w12(){$('.word12').fadeIn(1000);}
+            function w13(){$('.word13').fadeIn(1000);}
+            function w14(){$('.word14').fadeIn(1000);}
+            function w17(){$('.word17').fadeIn(1000);}
+            function w18(){$('.word18').fadeIn(1000);}
+            function wFrist(){$('.frist-w').fadeIn(1000);}
+            function wSecond(){$('.second-w').fadeIn(1000);}
+
+            function showNext(){
+                $(".next").fadeOut().delay(50).fadeIn();
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="section section1">
+            <div class="absolute bg-div bg"><img src="dtimg/p1-bg.jpg" class="bg bg-img"/></div>
+            <div class="absolute bg-div bg"><img src="dtimg/p1-word1.jpg" class="dt bg-img"/></div>
+            <img src="dtimg/word2.png" class="absolute word2">
+            <img src="dtimg/word1.png" class="absolute word1">
+            <img src="dtimg/next.png" class="absolute next bg">
+        </div>
+        <div class="section section2">
+            <div class="absolute bg-div bg"><img src="dtimg/p3-bg.jpg" class="bg bg-img"/></div>
+            <img src="dtimg/word3.png" class="absolute word3">
+            <img src="dtimg/word4.png" class="absolute word4">
+            <img src="dtimg/word5.png" class="absolute word5">
+        </div>
+        <div class="section section3">
+            <div class="absolute bg-div bg"><img src="dtimg/p4-bg.jpg" class="bg bg-img"/></div>
+            <img src="dtimg/word6.png" class="absolute word6">
+            <img src="dtimg/word7.png" class="absolute word7">
+            <img src="dtimg/word8.png" class="absolute word8">
+        </div>
+        <div class="section section4">
+            <div class="absolute bg-div bg"><img src="dtimg/p5-bg.jpg" class="bg bg-img"/></div>
+            <img src="dtimg/word9.png" class="absolute word9">
+            <img src="dtimg/word10.png" class="absolute word10">
+        </div>
+        <div class="section section5">
+            <div class="absolute bg-div bg"><img src="dtimg/p6-bg.jpg" class="bg bg-img"/></div>
+            <img src="dtimg/word11.png" class="absolute word11">
+            <img src="dtimg/word12.png" class="absolute word12">
+            <img src="dtimg/word13.png" class="absolute word13">
+        </div>
+        <div class="section section6">
+            <div class="absolute bg-div bg"><img src="dtimg/p7-bg.jpg" class="bg bg-img"/></div>
+            <img src="dtimg/word14.png" class="absolute word14">
+            <img src="dtimg/word15.png" class="absolute word15">
+        </div>
+        <div class="section section7">
+            <div class="absolute bg-div bg"><img src="dtimg/p8-bg.jpg" class="bg bg-img"/></div>
+            <img src="dtimg/word16.png" class="absolute word16">
+            <img src="dtimg/word17.png" class="absolute word17">
+            <img src="dtimg/word18.png" class="absolute word18">
+        </div>
+        <div class="section section8">
+            <div class="absolute bg-div bg"><img src="dtimg/id.jpg" class="bg bg-img"/></div>
+            <img src="dtimg/frist.png" class="absolute frist-w">
+            <img src="dtimg/second.png" id="scanQRCode" class="absolute second-w">
+        </div>
+        <script type="text/javascript">
+            var addEvent = function(elId,listener){
+                document.getElementById(elId)
+                        .addEventListener('click',function(e){
+                            if(!window.WeixinApi || !window.WeixinJSBridge) {
+                                alert('请确认您是在微信内置浏览器中打开的，并且WeixinApi.js已正确引用');
+                                e.preventDefault();
+                                return false;
+                            }
+                            listener(this,e);
+                        },false);
+            };
+            // 两个Flag
+            var optionMenuOn = true;
+            var toolbarOn = true;
+            // 打开扫码
+            addEvent('scanQRCode',function(el,e){
+                WeixinApi.scanQRCode({
+                    success : function(resp){
+                        alert('点击右上角相册~');
+                    }
+                });
+            });
+            // 需要分享的内容，请放到ready里
+            WeixinApi.ready(function(Api) {
+                // 微信分享的数据
+                var wxData = {
+                    "appId": "", // 服务号可以填写appId
+                    //http://whatsmore.github.io/MC/mcimg/page4-bg.jpg
+                    "imgUrl" : 'http://whatsmore.github.io/dt2/dtimg/logo.jpg',
+                    "link" : 'http://whatsmore.github.io/dt2/',
+                    "desc" : '双12到啦~Daimon家做活动啦！分享可享受大大优惠哦~~',
+                    "title" : "Daimon家美衣"
+                };
+                // 分享的回调
+                var wxCallbacks = {
+                    // 收藏操作是否触发回调，默认是开启的
+                    favorite : false,
+                    // 分享被用户自动取消
+                    cancel : function(resp) {
+                        // 你可以在你的页面上给用户一个小Tip，为什么要取消呢？
+                        alert("分享可享受更大优惠哦");
+                    },
+                    // 分享成功
+                    confirm : function(resp) {
+                        // 分享成功了，我们是不是可以做一些分享统计呢？
+                        alert("感谢您的支持");
+                    }
+                };
+                // 用户点开右上角popup菜单后，点击分享给好友，会执行下面这个代码
+                Api.shareToFriend(wxData, wxCallbacks);
+                // 点击分享到朋友圈，会执行下面这个代码
+                Api.shareToTimeline(wxData, wxCallbacks);
+                // 点击分享到腾讯微博，会执行下面这个代码
+                Api.shareToWeibo(wxData, wxCallbacks);
+                // iOS上，可以直接调用这个API进行分享，一句话搞定
+                Api.generalShare(wxData,wxCallbacks);
+                // 有可能用户是直接用微信“扫一扫”打开的，这个情况下，optionMenu是off状态
+            });
+        </script>
+    </body>
+</html>
